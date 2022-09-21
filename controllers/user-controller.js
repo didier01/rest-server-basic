@@ -65,12 +65,13 @@ const putUsers = async (req, res = response) => {
 
 const deleteUsers = async (req, res = response) => {
   const id = req.params.id;
-  // borrar de bd
+  
   // const userDelete = await User.findByIdAndDelete(id);
   const userUpdate = await User.findByIdAndUpdate(id, { status: false });
+
   res.json({
     msg: "delete API -  Controller",
-    userUpdate,
+    userUpdate
   });
 };
 
